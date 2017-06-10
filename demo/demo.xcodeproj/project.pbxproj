@@ -14,6 +14,7 @@
 		824A8C3D1EEBC04A00073793 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 824A8C3B1EEBC04A00073793 /* LaunchScreen.storyboard */; };
 		824A8C481EEBC04A00073793 /* demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824A8C471EEBC04A00073793 /* demoTests.swift */; };
 		824A8C531EEBC04A00073793 /* demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824A8C521EEBC04A00073793 /* demoUITests.swift */; };
+		824A8C611EEC172600073793 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824A8C601EEC172600073793 /* ViewController2.swift */; };
 		D864C24A42FD0E6229BDE538 /* Pods_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BF76712243952F105ADBCC /* Pods_demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		824A8C4E1EEBC04A00073793 /* demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		824A8C521EEBC04A00073793 /* demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demoUITests.swift; sourceTree = "<group>"; };
 		824A8C541EEBC04A00073793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		824A8C601EEC172600073793 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		A746F91C2D0DA061F94AB1C2 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-demo/Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 				824A8C391EEBC04A00073793 /* Assets.xcassets */,
 				824A8C3B1EEBC04A00073793 /* LaunchScreen.storyboard */,
 				824A8C3E1EEBC04A00073793 /* Info.plist */,
+				824A8C601EEC172600073793 /* ViewController2.swift */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				824A8C351EEBC04A00073793 /* ViewController.swift in Sources */,
 				824A8C331EEBC04A00073793 /* AppDelegate.swift in Sources */,
+				824A8C611EEC172600073793 /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

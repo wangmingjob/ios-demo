@@ -29,6 +29,10 @@ class ViewController: UIViewController {
         resultView.delegate = self
         return resultView
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,10 +101,17 @@ extension ViewController {
         // Create buttons
         let buttonOne = CancelButton(title: "CANCEL") {
             print("You canceled the car dialog.")
+            
+            let viewController: ViewController2 = ViewController2()
+            viewController.title2 = "sldfkjksd"
+//            self.navigationController?.pushViewController(viewController, animated: true)
+            self.present(viewController, animated: true, completion: nil)
         }
         
         let buttonTwo = DefaultButton(title: "ADMIRE CAR") {
             print("What a beauty!")
+            
+            
         }
         
         let buttonThree = DefaultButton(title: "BUY CAR", height: 60) {
