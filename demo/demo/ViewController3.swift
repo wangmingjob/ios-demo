@@ -21,6 +21,17 @@ class ViewController3: UIViewController {
         return resultView
     }()
     
+    lazy var btn: UIButton = {
+        let resultView: UIButton = UIButton()
+        resultView.layer.cornerRadius = 5
+        resultView.clipsToBounds = true
+        resultView.setTitle("OK", for: UIControlState.normal)
+        resultView.titleLabel?.textAlignment = NSTextAlignment.center
+        resultView.backgroundColor = UIColor.red
+        resultView.titleLabel?.textColor = UIColor.white
+        return resultView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +64,20 @@ extension ViewController3 {
         
         self.contentLabel.isUserInteractionEnabled = true
         self.contentLabel.tag = 100
-        self.contentLabel.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(ViewController3.clickContent(sender:))))
+        self.contentLabel.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action:
+            #selector(ViewController3.clickContent(sender:))))
+        
+        
+        self.view.addSubview(self.btn)
+        self.btn.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(self.contentLabel.snp.bottom).offset(10)
+            make.centerX.equalTo(self.view)
+            make.width.equalTo(100)
+            make.height.equalTo(50)
+        }
+        
+        self.btn.tag = 101
+        self.btn.addTarget(self, action: #selector(ViewController3.clickBtn(sender:)), for: UIControlEvents.touchUpInside)
     }
     
     func initData() {
@@ -68,4 +92,10 @@ extension ViewController3 {
         
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func clickBtn(sender: UIButton) -> Void {
+        let tag = sender.tag
+        print("click bt \(tag)")
+    }
 }
+
