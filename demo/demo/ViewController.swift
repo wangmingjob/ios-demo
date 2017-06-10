@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         return resultView
     }()
     
+    
     lazy var tableView: UITableView = {
         let resultView = UITableView.init(frame: CGRect.zero, style: UITableViewStyle.grouped)
         resultView.dataSource = self
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
     }()
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController
+        self.navigationController?.navigationBar.isHidden = true
     }
 
     override func viewDidLoad() {
@@ -54,16 +55,16 @@ extension ViewController {
     func initView() {
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.orange
-        self.view.frame = UIScreen.main.bounds
+        
         
         self.view.addSubview(contentLabel)
         self.contentLabel.snp.makeConstraints{ (make) -> Void in
             make.centerX.equalTo(self.view)
-            make.top.equalTo(5)
+            make.top.equalTo(50)
             make.width.height.equalTo(100)
         }
         
-        self.contentLabel.isUserInteractionEnabled = true
+                self.contentLabel.isUserInteractionEnabled = true
         self.contentLabel.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(ViewController.contentClick(sender:))))
         
         
@@ -99,22 +100,23 @@ extension ViewController {
         let popup = PopupDialog(title: title, message: message, image: image)
         
         // Create buttons
-        let buttonOne = CancelButton(title: "CANCEL") {
+        let buttonOne = CancelButton(title: "present") {
             print("You canceled the car dialog.")
             
             let viewController: ViewController2 = ViewController2()
-            viewController.title2 = "sldfkjksd"
-//            self.navigationController?.pushViewController(viewController, animated: true)
+            viewController.title2 = "title2"
             self.present(viewController, animated: true, completion: nil)
         }
         
-        let buttonTwo = DefaultButton(title: "ADMIRE CAR") {
+        let buttonTwo = DefaultButton(title: "pushViewController") {
             print("What a beauty!")
             
-            
+            let viewController: ViewController3 = ViewController3()
+            viewController.title3 = "title3"
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
         
-        let buttonThree = DefaultButton(title: "BUY CAR", height: 60) {
+        let buttonThree = DefaultButton(title: "BUT", height: 60) {
             print("Ah, maybe next time :)")
         }
         

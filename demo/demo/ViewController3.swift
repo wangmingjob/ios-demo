@@ -1,5 +1,5 @@
 //
-//  ViewController2.swift
+//  ViewController3.swift
 //  demo
 //
 //  Created by wangming on 6/10/17.
@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class ViewController2: UIViewController {
-    open var title2: String?
+class ViewController3: UIViewController {
+    open var title3: String?
     
     lazy var contentLabel: UILabel = {
         let resultView = UILabel()
@@ -36,10 +36,10 @@ class ViewController2: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
     }
-
+    
 }
 
-extension ViewController2 {
+extension ViewController3 {
     func initView() {
         
         self.view.backgroundColor = UIColor.white
@@ -49,11 +49,11 @@ extension ViewController2 {
             make.width.height.equalTo(100)
         }
         
-        self.contentLabel.text = self.title2
+        self.contentLabel.text = self.title3
         
         self.contentLabel.isUserInteractionEnabled = true
         self.contentLabel.tag = 100
-        self.contentLabel.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(ViewController2.clickContent(sender:))))
+        self.contentLabel.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(ViewController3.clickContent(sender:))))
     }
     
     func initData() {
@@ -61,13 +61,11 @@ extension ViewController2 {
     }
 }
 
-extension ViewController2 {
+extension ViewController3 {
     func clickContent(sender: UITapGestureRecognizer) {
         let content: Int = (sender.view?.tag)!
         print("click content \(content)")
         
-        dismiss(animated: true, completion: {
-            print("closed")
-        })
+        self.navigationController?.popViewController(animated: true)
     }
 }
