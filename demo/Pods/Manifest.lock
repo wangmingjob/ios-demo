@@ -1,0 +1,15 @@
+PODS:
+  - PopupDialog (0.5.4)
+  - SnapKit (3.2.0)
+
+DEPENDENCIES:
+  - PopupDialog
+  - SnapKit
+
+SPEC CHECKSUMS:
+  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+
+PODFILE CHECKSUM: bede0f5e0daec3752356472a271883869299a208
+
+COCOAPODS: 1.2.0
